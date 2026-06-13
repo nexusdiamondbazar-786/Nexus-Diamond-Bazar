@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Now | Nexus Diamond Bazar</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.error{
+    color:#ff4d4d;
+    font-size:14px;
+    margin-top:8px;
+    display:none;
+}
+
+.back-btn{
+    background:linear-gradient(135deg,#d8c51d,#ccae29);
+    color:#000000;
+    border:none;
+    padding:12px 24px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    margin-bottom:15px;
+    box-shadow:0 4px 15px rgba(209, 178, 38, 0.35);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    transform:translateY(-2px);
+}
+
+.uid-card{
+    background:linear-gradient(135deg,#d3d617,#d8d50b);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:15px;
+    padding:18px;
+    margin-bottom:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
+}
+
+.uid-card span{
+    color:#000000;
+    font-size:14px;
+}
+
+.uid-card h3{
+    color:#000000;
+    margin-top:8px;
+    font-size:22px;
+    letter-spacing:1px;
+}
+
+.hidden{
+    display:none;
+}
+
+.order-details{
+    background:#1e293b;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:20px;
+}
+
+.order-details p{
+    margin:8px 0;
+    color:#fff;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        💎 Nexus Diamond Bazar
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="payment.html">Order</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<!-- ================= PAGE HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <h1>Free Fire Top-Up</h1>
+
+        <p>
+            Enter UID, Select Package and Complete Payment
+        </p>
+
+    </div>
+
+</section>
+
+<div class="container">
+
+<!-- ================= UID ================= -->
+
+<div id="step1" class="box">
+
+    <h2>Enter Free Fire UID</h2>
+
+    <input
+        type="text"
+        id="uid"
+        placeholder="Enter UID"
+    >
+
+    <p id="uidError" class="error"></p>
+
+    <button onclick="startShop()">
+        Continue
+    </button>
+
+</div>
+
+<div id="uidCard" class="uid-card hidden">
+    <span>🎮 Free Fire UID</span>
+    <h3 id="showUID"></h3>
+</div>
+
+<!-- ================= PACKAGES ================= -->
+
+
+<div id="packages" class="hidden">
+
+    <button class="back-btn" onclick="backToUID()">
+    ← Change UID
+</button>
+
+
+    <div class="box">
+
+        <h2>💎 Diamond Packages</h2>
+
+        <div class="grid">
+
+            <button onclick="selectItem('48 Diamonds',100,this)">48 💎 - Rs100</button>
+
+            <button onclick="selectItem('105 Diamonds',200,this)">105 💎 - Rs200</button>
+
+            <button onclick="selectItem('210 Diamonds',400,this)">210 💎 - Rs400</button>
+
+            <button onclick="selectItem('565 Diamonds',900,this)">565 💎 - Rs900</button>
+
+            <button onclick="selectItem('670 Diamonds',1100,this)">670 💎 - Rs1100</button>
+
+            <button onclick="selectItem('775 Diamonds',1450,this)">775 💎 - Rs1450</button>
+
+            <button onclick="selectItem('1138 Diamonds',1800,this)">1138 💎 - Rs1800</button>
+
+            <button onclick="selectItem('1461 Diamonds',2300,this)">1461 💎 - Rs2300</button>
+
+            <button onclick="selectItem('1816 Diamonds',2900,this)">1816 💎 - Rs2900</button>
+
+            <button onclick="selectItem('2174 Diamonds',3500,this)">2174 💎 - Rs3500</button>
+
+            <button onclick="selectItem('2494 Diamonds',3900,this)">2494 💎 - Rs3900</button>
+
+            <button onclick="selectItem('2852 Diamonds',4350,this)">2852 💎 - Rs4350</button>
+
+            <button onclick="selectItem('3207 Diamonds',4950,this)">3207 💎 - Rs4950</button>
+
+            <button onclick="selectItem('3565 Diamonds',5400,this)">3565 💎 - Rs5400</button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SPECIAL DEALS ================= -->
+<div class="box">
+
+    <h2>🔥 Special Deals</h2>
+
+    <div class="deals-grid">
+
+        <div class="deal-card" onclick="selectItem('Weekly Membership',450,this)">
+            <img src="weekly.png" alt="Weekly Membership">
+            <h3>Weekly Membership</h3>
+            <p>Rs 450</p>
+        </div>
+
+        <div class="deal-card" onclick="selectItem('Monthly Membership',1600,this)">
+            <img src="montly.png" alt="Monthly Membership">
+            <h3>Monthly Membership</h3>
+            <p>Rs 1600</p>
+        </div>
+
+        <div class="deal-card" onclick="selectItem('Weekly Lite',250,this)">
+            <img src="weeklylite.png" alt="Weekly Lite">
+            <h3>Weekly Lite</h3>
+            <p>Rs 250</p>
+        </div>
+
+        <div class="deal-card" onclick="selectItem('Evo Access 3 Days',260,this)">
+            <img src="evo3.png" alt="Evo Access 3 Days">
+            <h3>Evo Access 3 Days</h3>
+            <p>Rs 260</p>
+        </div>
+
+        <div class="deal-card" onclick="selectItem('Evo Access 7 Days',390,this)">
+            <img src="evo7.png" alt="Evo Access 7 Days">
+            <h3>Evo Access 7 Days</h3>
+            <p>Rs 390</p>
+        </div>
+
+        <div class="deal-card" onclick="selectItem('Evo Access 30 Days',1010,this)">
+            <img src="evo30.png" alt="Evo Access 30 Days">
+            <h3>Evo Access 30 Days</h3>
+            <p>Rs 1010</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= SUMMARY ================= -->
+
+<div id="summary" class="box hidden">
+
+    <h2>📦 Order Summary</h2>
+
+    <p>
+        <strong>UID:</strong>
+        <span id="sumUID"></span>
+    </p>
+
+    <p>
+        <strong>Item:</strong>
+        <span id="sumItem"></span>
+    </p>
+
+    <p>
+        <strong>Price:</strong>
+        <span id="sumPrice"></span>
+    </p>
+
+    <button onclick="goPayment()">
+        Proceed To Payment
+    </button>
+
+</div>
+
+
+<!-- ================= PAYMENT ================= -->
+
+<div id="payment" class="box hidden">
+
+    <button class="back-btn" onclick="backToPackages()">
+        ← Change Package
+    </button>
+
+        <!-- Order Details -->
+    <div class="order-details">
+
+        <p>
+            <strong>UID:</strong>
+            <span id="payUID"></span>
+        </p>
+
+        <p>
+            <strong>Package:</strong>
+            <span id="payItem"></span>
+        </p>
+
+        <p>
+            <strong>Amount:</strong>
+            Rs <span id="payPrice"></span>
+        </p>
+
+    </div>
+
+    <h2>💳 EasyPaisa Payment</h2>
+
+    <p class="pay-text">
+        Send payment to the EasyPaisa account below.
+    </p>
+
+    <div class="pay-card">
+
+        <p>EasyPaisa Number</p>
+
+        <h3>03132727992</h3>
+
+    </div>
+
+    <input
+        type="text"
+        id="paymentRef"
+        placeholder="Enter Transaction ID"
+    >
+
+    <button onclick="sendOrder()">
+        Submit Order
+    </button>
+
+</div>
+
+</div> <!-- payment -->
+
+</div> <!-- container -->
+
+<!-- ================= ORDER GUIDE ================= -->
+
+<section class="faq-section">
+
+    <h2>How To Order</h2>
+
+    <div class="faq-container">
+
+        <div class="faq-card">
+            <h3>Step 1</h3>
+            <p>
+                Enter your Free Fire UID.
+            </p>
+        </div>
+
+        <div class="faq-card">
+            <h3>Step 2</h3>
+            <p>
+                Select your desired package.
+            </p>
+        </div>
+
+        <div class="faq-card">
+            <h3>Step 3</h3>
+            <p>
+                Send payment through EasyPaisa.
+            </p>
+        </div>
+
+        <div class="faq-card">
+            <h3>Step 4</h3>
+            <p>
+                Enter Transaction ID and submit order.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h3>Nexus Diamond Bazar</h3>
+
+            <p>
+                Trusted Free Fire Top-Up Store with fast delivery,
+                secure payment and customer support.
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="payment.html">Order</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>WhatsApp: 03222191701</p>
+            <p>EasyPaisa: 03132727992</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Support</h3>
+
+            <p>
+                Available 24/7 for order verification and customer assistance.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Nexus Diamond Bazar - All Rights Reserved
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+function startShop() {
+
+    const uid = document.getElementById("uid").value.trim();
+    const error = document.getElementById("uidError");
+
+    // Empty UID
+    if (uid === "") {
+        error.style.display = "block";
+        error.textContent = "Please enter your Free Fire UID.";
+        return;
+    }
+
+    // Numbers only
+    if (!/^\d+$/.test(uid)) {
+        error.style.display = "block";
+        error.textContent = "Please enter a valid Free Fire UID.";
+        return;
+    }
+
+    error.style.display = "none";
+
+    // Show UID Card
+    document.getElementById("showUID").textContent = uid;
+    document.getElementById("uidCard").classList.remove("hidden");
+
+    // Hide UID Section
+    document.getElementById("step1").style.display = "none";
+
+    // Show Packages
+    document.getElementById("packages").classList.remove("hidden");
+
+    // Scroll to Packages
+    document.getElementById("packages").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function backToUID() {
+
+    document.getElementById("packages").classList.add("hidden");
+    document.getElementById("summary").classList.add("hidden");
+    document.getElementById("payment").classList.add("hidden");
+
+    document.getElementById("step1").style.display = "block";
+
+    // Hide UID Card
+    document.getElementById("uidCard").classList.add("hidden");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function backToPackages() {
+
+    document.getElementById("payment").classList.add("hidden");
+
+    document.getElementById("packages").classList.remove("hidden");
+
+    document.getElementById("packages").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function goPayment() {
+
+    document.getElementById("summary").classList.add("hidden");
+
+    document.getElementById("payment").classList.remove("hidden");
+
+    document.getElementById("payUID").innerText =
+        document.getElementById("sumUID").innerText;
+
+    document.getElementById("payItem").innerText =
+        document.getElementById("sumItem").innerText;
+
+    document.getElementById("payPrice").innerText =
+        document.getElementById("sumPrice").innerText;
+
+    document.getElementById("payment").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
+</body>
+</html>

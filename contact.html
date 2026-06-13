@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Nexus Diamond Bazar</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        💎 Nexus Diamond Bazar
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="payment.html">Order</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<!-- ================= PAGE HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            We're here to help with your orders and payments.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT INFO ================= -->
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <h2>📱 WhatsApp Support</h2>
+
+            <p>
+                Contact us directly on WhatsApp for support.
+            </p>
+
+            <a
+                href="https://wa.me/923222191701"
+                target="_blank"
+                class="contact-btn"
+            >
+                Chat on WhatsApp
+            </a>
+
+            <h3 class="contact-number">
+                03222191701
+            </h3>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h2>💳 EasyPaisa Payment</h2>
+
+            <p>
+                Send payment to:
+            </p>
+
+            <div class="payment-box">
+
+                <span>EasyPaisa Number</span>
+
+                <h3>03132727992</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+
+<section class="contact-form-section">
+
+    <div class="form-container">
+
+        <h2>Send a Message</h2>
+
+        <form onsubmit="sendWhatsApp(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Subject"
+                required
+            >
+
+            <textarea
+                id="message"
+                rows="6"
+                placeholder="Write your message..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq-section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+
+        <div class="faq-card">
+
+            <h3>How long does delivery take?</h3>
+
+            <p>
+                Orders are processed after payment verification.
+            </p>
+
+        </div>
+
+        <div class="faq-card">
+
+            <h3>What payment method is accepted?</h3>
+
+            <p>
+                EasyPaisa payments only.
+            </p>
+
+        </div>
+
+        <div class="faq-card">
+
+            <h3>How do I confirm my order?</h3>
+
+            <p>
+                Submit UID, select package and enter Transaction ID.
+            </p>
+
+        </div>
+
+        <div class="faq-card">
+
+            <h3>Need support?</h3>
+
+            <p>
+                Contact us directly on WhatsApp.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h3>Nexus Diamond Bazar</h3>
+
+            <p>
+                Trusted Free Fire Top-Up Store with secure payments and fast delivery.
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="payment.html">Order</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>WhatsApp: 03222191701</p>
+            <p>EasyPaisa: 03132727992</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Support</h3>
+
+            <p>
+                Available 24/7 for customer assistance.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Nexus Diamond Bazar - All Rights Reserved
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

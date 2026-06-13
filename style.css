@@ -1,0 +1,788 @@
+/* =====================================
+   RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b0b0b;
+    color:#fff;
+    line-height:1.6;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.header{
+    width:100%;
+    background:#111;
+    border-bottom:2px solid gold;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 30px;
+
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    color:gold;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.navbar{
+    display:flex;
+    gap:25px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    color:gold;
+}
+
+.menu-btn{
+    display:none;
+    color:gold;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.hero{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Dark Overlay */
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+/* Content */
+.hero-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+    animation: none !important;
+    transition: none !important;
+}
+
+.hero-content h1{
+    font-size: 60px;
+    color: gold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.hero-btn{
+    display: inline-block;
+    padding: 15px 35px;
+
+    background: gold;
+    color: #000;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover{
+    transform: translateY(-3px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:992px){
+
+    .hero-content h1{
+        font-size: 42px;
+    }
+
+    .hero-content p{
+        font-size: 18px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .hero-content{
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 95%;
+    }
+
+    .hero-content h1{
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .hero-content p{
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .hero-btn{
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width:480px){
+
+    .hero-content{
+        top: 58%;
+    }
+
+    .hero-content h1{
+        font-size: 20px;
+    }
+
+    .hero-content p{
+        font-size: 13px;
+    }
+
+    .hero-btn{
+        padding: 10px 20px;
+        width: auto;
+    }
+}
+
+
+/* =====================================
+   PAGE HERO
+===================================== */
+
+.page-hero{
+    background:#111;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.page-hero-content h1{
+    color:gold;
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.page-hero-content p{
+    color:#ccc;
+}
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+.features,
+.popular,
+.deals,
+.about-section,
+.contact-section,
+.contact-form-section,
+.faq-section,
+.cta{
+    padding:80px 20px;
+}
+
+.features h2,
+.popular h2,
+.deals h2,
+.about-section h2,
+.contact-form-section h2,
+.faq-section h2,
+.cta h2{
+    text-align:center;
+    color:gold;
+    margin-bottom:40px;
+}
+
+/* =====================================
+   CARDS
+===================================== */
+
+.cards{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #222;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:gold;
+}
+
+.card h3{
+    color:gold;
+    margin-bottom:12px;
+}
+
+/* =====================================
+   ABOUT
+===================================== */
+
+.about-container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.about-container p{
+    margin-bottom:20px;
+    color:#ddd;
+}
+
+.dark-section{
+    background:#111;
+}
+
+.about-cards{
+    margin-top:40px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.about-card{
+    background:#161616;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    border:1px solid #222;
+}
+
+.about-card h3{
+    color:gold;
+    margin-bottom:10px;
+}
+
+/* =====================================
+   CONTACT
+===================================== */
+
+.contact-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+}
+
+.contact-card{
+    background:#111;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border:1px solid #222;
+}
+
+.contact-card h2{
+    color:gold;
+    margin-bottom:15px;
+}
+
+.contact-btn{
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:gold;
+    color:black;
+
+    text-decoration:none;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+}
+
+.contact-number{
+    margin-top:20px;
+    color:gold;
+}
+
+.payment-box{
+    margin-top:20px;
+    background:#181818;
+
+    padding:20px;
+
+    border-radius:10px;
+}
+
+.payment-box h3{
+    color:gold;
+    margin-top:10px;
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+.form-container{
+    max-width:700px;
+    margin:auto;
+}
+
+.form-container form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.form-container input,
+.form-container textarea{
+    width:100%;
+
+    padding:14px;
+
+    background:#111;
+
+    color:white;
+
+    border:1px solid #333;
+    border-radius:8px;
+}
+
+.form-container button{
+    background:gold;
+    color:black;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* =====================================
+   PAYMENT PAGE
+===================================== */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.box{
+    background:#111;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    border-radius:15px;
+
+    border:1px solid #222;
+}
+
+.box h2{
+    color:gold;
+    margin-bottom:20px;
+}
+
+.box input{
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    background:#1a1a1a;
+    color:white;
+
+    border:1px solid #333;
+    border-radius:8px;
+}
+
+.box button{
+    background:gold;
+    color:black;
+
+    border:none;
+
+    padding:14px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+}
+
+.grid button{
+    background:#181818;
+    color:white;
+
+    border:1px solid #333;
+
+    min-height:70px;
+
+    transition:.3s;
+}
+
+.grid button:hover{
+    border-color:gold;
+}
+
+.pay-card{
+    background:#181818;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    margin:20px 0;
+}
+
+.pay-card h3{
+    color:gold;
+    margin-top:10px;
+}
+
+.pay-text{
+    color:#ddd;
+}
+
+.hidden{
+    display:none;
+}
+
+/* =====================================
+   FAQ
+===================================== */
+
+.faq-container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.faq-card{
+    background:#111;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    border:1px solid #222;
+}
+
+.faq-card h3{
+    color:gold;
+    margin-bottom:10px;
+}
+
+/* =====================================
+   CTA
+===================================== */
+
+.cta{
+    text-align:center;
+}
+
+.cta p{
+    margin-bottom:25px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer{
+    background:#111;
+    border-top:2px solid gold;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+
+    padding:60px 20px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+}
+
+.footer-box h3{
+    color:gold;
+    margin-bottom:15px;
+}
+
+.footer-box p{
+    color:#ccc;
+}
+
+.footer-box a{
+    display:block;
+
+    color:#ccc;
+
+    margin-bottom:10px;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.footer-box a:hover{
+    color:gold;
+}
+
+.footer-bottom{
+    text-align:center;
+
+    padding:20px;
+
+    border-top:1px solid #222;
+
+    color:#aaa;
+}
+
+/* =====================================
+   ANIMATION
+===================================== */
+
+.hero-content,
+.card,
+.about-card,
+.contact-card,
+.faq-card,
+.box{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .navbar{
+        position:absolute;
+
+        top:70px;
+        left:0;
+
+        width:100%;
+
+        background:#111;
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:20px;
+    }
+
+    .navbar.active{
+        display:flex;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .page-hero-content h1{
+        font-size:32px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* ================= SPECIAL DEALS ================= */
+
+.deals-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.deal-card{
+    background:#181818;
+    border:1px solid #333;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+    text-align:center;
+    padding-bottom:15px;
+}
+
+.deal-card:hover{
+    transform:translateY(-5px);
+    border-color:gold;
+}
+
+.deal-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+.deal-card h3{
+    color:gold;
+    margin:15px 10px 8px;
+    font-size:18px;
+}
+
+.deal-card p{
+    color:#fff;
+    font-weight:bold;
+}
+
+/* Selected Card */
+
+.deal-card.selected{
+    border:2px solid gold;
+    box-shadow:0 0 15px rgba(255,215,0,.4);
+}
+
+@media(max-width:768px){
+
+    .deals-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .deal-card img{
+        height:130px;
+    }
+
+    .deal-card h3{
+        font-size:15px;
+    }
+
+}
