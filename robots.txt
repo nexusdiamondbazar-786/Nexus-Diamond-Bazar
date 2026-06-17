@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://nexusdiamondbazar-786.github.io/Nexus-Diamond-Bazar/sitemap.xml
+Sitemap: https://nexus-diamond-bazar-786.netlify.app/sitemap.xml
